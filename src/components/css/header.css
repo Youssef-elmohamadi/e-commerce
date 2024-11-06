@@ -1,0 +1,34 @@
+.top-offer {
+  color: #ce1e77 !important;
+}
+
+.search-btn {
+  background-color: #ce1e77 !important;
+  color: white !important;
+  border: 2px solid #ce1e77 !important;
+}
+.search-btn:hover {
+  background-color: #ffd000 !important;
+  color: black !important;
+  border: 2px solid #ffd000 !important;
+}
+
+.input-search {
+  width: 250px !important;
+}
+
+.input-search:focus {
+  outline: none !important;
+  box-shadow: none !important;
+  border-color: inherit !important;
+}
+
+.nav-button {
+  border: 1px solid #fff !important;
+  color: #fff !important;
+  background-color: white !important;
+}
+
+.nav-button span {
+  color: #fff !important;
+}

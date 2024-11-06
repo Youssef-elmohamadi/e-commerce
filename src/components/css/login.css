@@ -1,0 +1,29 @@
+.container-login {
+  height: calc(100vh - 125px) !important;
+}
+
+.login-img {
+  min-height: calc(100vh - 125px) !important;
+}
+
+.custom-input {
+  display: block;
+  width: 100% !important;
+}
+
+.custom-input:focus {
+  outline: none !important;
+  box-shadow: none !important;
+  border-color: inherit !important;
+}
+.custom-position {
+  position: absolute !important;
+  top: -38px !important;
+  right: -8px !important;
+  background-color: #ce1e77 !important;
+}
+
+.custom-btn {
+  background-color: #ce1e77 !important;
+  border: 2px solid #ce1e77 !important;
+}
