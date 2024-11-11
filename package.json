@@ -2,7 +2,7 @@
   "name": "full-e-commerce",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://youssef-elmohamadi.github.io/e-commerce",
+  "homepage": "https://youssef-elmohamadi.github.io/e-commerce/",
   "dependencies": {
     "@reduxjs/toolkit": "^2.3.0",
     "@testing-library/jest-dom": "^5.17.0",
