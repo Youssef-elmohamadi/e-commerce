@@ -1,4 +1,4 @@
-const Homeproduct =
+const homeProduct =
 [
     {
         id: 1,
@@ -6,13 +6,13 @@ const Homeproduct =
         price: '26',
         image: "./images/p1.webp",
         cat: 'tv',
-        type: 'new',
+        type: 'new'
     },
     {
         id: 2,
         Name: 'product2',
         price: '96',
-        image:" ./images/p2.webp" ,
+        image:"./images/p2.webp" ,
         cat: 'laptop',
         type: 'new',
     },
@@ -97,4 +97,4 @@ const Homeproduct =
         type: 'top',
     },
 ]
-export default Homeproduct
+export default homeProduct;

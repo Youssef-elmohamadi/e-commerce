@@ -1,0 +1,38 @@
+.left-shop-box {
+  position: relative;
+  transition: 1s;
+  margin-left: 0% !important;
+}
+
+.cat {
+  margin-left: 0% !important;
+}
+
+.category-icon {
+  transition: 1s;
+  display: none;
+  top: 240px;
+}
+
+@media (max-width: 992px) {
+  .shop-container .left-shop-box {
+    display: none !important;
+  }
+
+  .shop-container .show-icon {
+    position: fixed;
+    width: 100% !important;
+    z-index: 1000 !important;
+    top: 280px;
+    height: 100% !important;
+    left: 0px;
+    display: flex !important;
+  }
+
+  .shop-container .right-shop-box {
+    width: 100% !important;
+  }
+  .category-icon {
+    display: block;
+  }
+}

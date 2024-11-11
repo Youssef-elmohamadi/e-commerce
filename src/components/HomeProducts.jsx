@@ -1,5 +1,5 @@
-import { React, useState, useEffect } from "react";
-import HomeProduct from "../home_product.js";
+import React, { useState, useContext, useEffect } from "react";
+import homeProduct from "../home_product.js";
 import "./css/home-products.css";
 import { FaRegEye } from "react-icons/fa";
 import { FaHeart } from "react-icons/fa";
@@ -8,8 +8,7 @@ import { CiFacebook } from "react-icons/ci";
 import { FaSquareXTwitter } from "react-icons/fa6";
 import { FaLinkedin } from "react-icons/fa";
 import { FaShoppingCart } from "react-icons/fa";
-import { use } from "framer-motion/client";
-import imgTest from "../p6.webp";
+import { ProductsContext } from "./ProductsContext";
 
 const testmpnial = `${process.env.PUBLIC_URL}/images/T1.avif`;
 const ads1 = `${process.env.PUBLIC_URL}/images/Multi-Banner-1.avif`;
@@ -19,24 +18,13 @@ const ads4 = `${process.env.PUBLIC_URL}/images/Multi-Banner-4.avif`;
 const ads5 = `${process.env.PUBLIC_URL}/images/Multi-Banner-5.webp`;
 // const testmpnial = `${process.env.PUBLIC_URL}/images/T1.avif`;
 const HomeProducts = () => {
-  const [products, setProducts] = useState(HomeProduct);
+  const { products, filter } = useContext(ProductsContext);
   const [newProducts, setNewProducts] = useState([]);
   const [featureProducts, setFeatureProducts] = useState([]);
   const [topProducts, setTopProducts] = useState([]);
-  const filter = (x) => {
-    if (x === "new") {
-      setProducts(HomeProduct.filter((item) => item.type === "new"));
-    } else if (x === "featured") {
-      setProducts(HomeProduct.filter((item) => item.type === "featured"));
-    } else if (x === "top") {
-      setProducts(HomeProduct.filter((item) => item.type === "top"));
-    } else if (x === "all") {
-      setProducts(HomeProduct);
-    }
-  };
 
   const categoryFilter = () => {
-    const { newProducts, featureProducts, topProducts } = HomeProduct.reduce(
+    const { newProducts, featureProducts, topProducts } = homeProduct.reduce(
       (acc, item) => {
         if (item.type === "new") acc.newProducts.push(item);
         else if (item.type === "featured") acc.featureProducts.push(item);
@@ -53,9 +41,6 @@ const HomeProducts = () => {
   useEffect(() => {
     categoryFilter();
   }, []);
-  console.log(newProducts);
-  console.log(featureProducts);
-  console.log(topProducts);
 
   return (
     <>
@@ -218,11 +203,7 @@ const HomeProducts = () => {
                 >
                   <div className="w-100 d-flex justify-content-between">
                     <div style={{ width: "35%" }} className="img">
-                      <img
-                        src={item.image || imgTest}
-                        className="w-100"
-                        alt={item.Name}
-                      />
+                      <img src={item.image} className="w-100" alt={item.Name} />
                     </div>
                     <div style={{ width: "63%" }} className="info p-2">
                       <h4 className="fs-5 text-secondary">{item.Name}</h4>
@@ -254,11 +235,7 @@ const HomeProducts = () => {
                 >
                   <div className="w-100 d-flex justify-content-between">
                     <div style={{ width: "35%" }} className="img">
-                      <img
-                        src={item.image || imgTest}
-                        className="w-100"
-                        alt={item.Name}
-                      />
+                      <img src={item.image} className="w-100" alt={item.Name} />
                     </div>
                     <div style={{ width: "63%" }} className="info p-2">
                       <h4 className="fs-5 text-secondary">{item.Name}</h4>
@@ -290,11 +267,7 @@ const HomeProducts = () => {
                 >
                   <div className="w-100 d-flex justify-content-between">
                     <div style={{ width: "35%" }} className="img">
-                      <img
-                        src={item.image || imgTest}
-                        className="w-100"
-                        alt={item.Name}
-                      />
+                      <img src={item.image} className="w-100" alt={item.Name} />
                     </div>
                     <div style={{ width: "63%" }} className="info p-2">
                       <h4 className="fs-5 text-secondary">{item.Name}</h4>
