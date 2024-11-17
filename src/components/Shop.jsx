@@ -3,21 +3,31 @@ import { FaRegEye, FaHeart } from "react-icons/fa";
 import { MdCategory } from "react-icons/md";
 import "./css/shop.css";
 import { ProductsContext } from "./ProductsContext";
-
+import Swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "./redux-toolkit/Cart/cartSlice";
 
 const Shop = () => {
-  const [showCategory, setShowCategory] = useState(false);
-
   const toggleCategorySide = () => {
     document.querySelector(".left-shop-box").classList.toggle("show-icon");
   };
+  const MySwal = withReactContent(Swal);
+
+  const [showCategory, setShowCategory] = useState(false);
+
   const cartStore = useSelector((state) => state.cart);
 
   const dispatch = useDispatch();
   const handleAddToCart = (item) => {
     dispatch(addToCart(item));
+    Swal.fire({
+      position: "top-end",
+      icon: "success",
+      title: "Item added to cart",
+      showConfirmButton: false,
+      timer: 2000,
+    });
   };
   const { shop, categoryFilter, allCat } = useContext(ProductsContext);
   return (

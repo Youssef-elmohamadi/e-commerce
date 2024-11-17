@@ -60,13 +60,13 @@ const SignUp = () => {
     <div className="container-signup container-fluid d-flex align-items-center justify-content-center ">
       <form
         onSubmit={handleSubmit}
-        className="login-form w-50 h-100 my-auto p-5 d-flex flex-column align-items-center"
+        className="login-form col-12 col-md-6 h-100 my-auto p-5 d-flex flex-column align-items-center"
       >
         <div className="text-center mb-5">
           <img src={logo} alt="logo" />
           <p className="mt-3 fw-bold text-secondary">Login into your account</p>
         </div>
-        <div className="mb-2 w-75">
+        <div className="mb-2 row g-0 col-12  col-lg-9">
           <label htmlFor="exampleInputName1" className="form-label d-block">
             Name
           </label>
@@ -92,7 +92,7 @@ const SignUp = () => {
             )}
           </div>
         </div>
-        <div className="mb-2 w-75">
+        <div className="mb-2 row g-0 col-12  col-lg-9">
           <label htmlFor="exampleInputEmail1" className="form-label d-block">
             Email address
           </label>
@@ -118,7 +118,7 @@ const SignUp = () => {
             )}
           </div>
         </div>
-        <div className="mb-2 w-75">
+        <div className="mb-2 row g-0 col-12  col-lg-9">
           <label htmlFor="exampleInputPassword1" className="form-label d-block">
             Password
           </label>
@@ -144,7 +144,7 @@ const SignUp = () => {
             )}
           </div>
         </div>
-        <div className="mb-2 w-75">
+        <div className="mb-2 row g-0 col-12  col-lg-9">
           <label htmlFor="exampleInputPassword2" className="form-label d-block">
             Confirm Password
           </label>
@@ -171,7 +171,7 @@ const SignUp = () => {
           </div>
         </div>
         {errorMsg && (
-          <div className="mb-2 w-75">
+          <div className="mb-2 row g-0 col-12  col-lg-9">
             <p className="text-danger">{errorMsg}</p>
           </div>
         )}

@@ -1,3 +1,31 @@
-.cart-item {
-  height: 200px;
+* {
+  box-sizing: border-box !important;
+  font-family: sans-serif !important;
+}
+
+.cart-fist {
+  width: 100% !important;
+}
+
+.cart-buttons {
+  background-color: #ffc107;
+}
+
+.cart-buttons button {
+  background-color: #ffc107;
+  color: #000;
+  border: none;
+}
+.cart-buttons button:hover {
+  background-color: #ffc107;
+  border: none;
+}
+
+.cart-buttons input {
+  outline: none;
+}
+
+.delete-btn {
+  background-color: #ce1e77 !important;
+  color: #fff !important;
 }

@@ -48,10 +48,10 @@ const Login = () => {
 
   return (
     <>
-      <div className="container-login container-fluid d-flex align-items-center justify-content-between ">
+      <div className="container-login row overflow-hidden g-0 ">
         <form
           onSubmit={handleSubmit}
-          className="login-form w-50 h-100 my-auto p-5 shadow d-flex flex-column align-items-center "
+          className="login-form col-md-6 col-12 h-100 my-auto p-5 shadow d-flex flex-column align-items-center "
         >
           <div className="text-center mb-5 ">
             <img src={logo} alt="" />
@@ -127,7 +127,7 @@ const Login = () => {
             Sign Up
           </Link>
         </form>
-        <div class="login-img w-50 d-flex justify-content-center align-items-center bg-light">
+        <div class="login-img col-md-6 col-0 d-flex justify-content-center align-items-center bg-light">
           <img className="w-75" src={loginImage} alt="" />
         </div>
       </div>

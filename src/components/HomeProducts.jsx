@@ -1,6 +1,8 @@
 import React, { useState, useContext, useEffect } from "react";
 import homeProduct from "../home_product.js";
 import "./css/home-products.css";
+import Swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
 import { FaRegEye } from "react-icons/fa";
 import { FaHeart } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
@@ -9,6 +11,8 @@ import { FaSquareXTwitter } from "react-icons/fa6";
 import { FaLinkedin } from "react-icons/fa";
 import { FaShoppingCart } from "react-icons/fa";
 import { ProductsContext } from "./ProductsContext";
+import { useDispatch, useSelector } from "react-redux";
+import { addToCart } from "./redux-toolkit/Cart/cartSlice";
 
 const testmpnial = `${process.env.PUBLIC_URL}/images/T1.avif`;
 const ads1 = `${process.env.PUBLIC_URL}/images/Multi-Banner-1.avif`;
@@ -41,6 +45,19 @@ const HomeProducts = () => {
   useEffect(() => {
     categoryFilter();
   }, []);
+
+  const dispatch = useDispatch();
+
+  const handleAddToCart = (item) => {
+    dispatch(addToCart(item));
+    Swal.fire({
+      position: "top-end",
+      icon: "success",
+      title: "Item added to cart",
+      showConfirmButton: false,
+      timer: 2000,
+    });
+  };
 
   return (
     <>
@@ -107,6 +124,7 @@ const HomeProducts = () => {
                       <a
                         href="#"
                         class="btn btn-primary add-btn  text-align-center  "
+                        onClick={() => handleAddToCart(item)}
                       >
                         Add to Cart
                       </a>

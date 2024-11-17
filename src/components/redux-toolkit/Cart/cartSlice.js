@@ -18,12 +18,13 @@ const CartSlice = createSlice ({
                     name: newItem.Name,
                     image: newItem.image,
                     price: newItem.price,
+                    category : newItem.cat,
                     quantity: 1,
                     totalPrice: newItem.price,
                 });
             } else {
                 existingItem.quantity++;
-                existingItem.totalPrice = existingItem.totalPrice + newItem.price;
+                existingItem.totalPrice = +existingItem.totalPrice + +newItem.price;
             }
         },
         removeFromCart: (state, action) => {
@@ -38,7 +39,7 @@ const CartSlice = createSlice ({
             }
         },
         calculateTotal: (state) => {
-            state.totalPrice= state.items.reduce((total, item) => total + item.totalPrice, 0);
+            state.totalPrice= state.items.reduce((total, item) => +total + +item.totalPrice, 0);
         }
     }
 })

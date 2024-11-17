@@ -1,0 +1,11 @@
+.contact .contact-container {
+  background-color: #eee !important;
+  padding: 10px;
+  box-shadow: 0px -10px #ffc107 !important;
+}
+.send-button {
+  background-color: #ffc107 !important ;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
